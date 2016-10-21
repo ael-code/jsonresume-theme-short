@@ -95,6 +95,67 @@
 	</section>
 	{{/if}}
 
+	{{#if resume.education.length}}
+	<section id="education">
+		<h2>Education</h2>
+		{{#each resume.education}}
+		<div class="item">
+			<header>
+				{{#if institution}}
+					<h3 class="name">{{institution}}</h3>
+				{{/if}}
+			</header>
+
+			<div class="dates">
+				{{#if startDate}}
+				<span class="startDate">
+					{{date startDate}}
+				</span>
+				{{/if}}
+				{{#if endDate}}
+				<span class="endDate">
+					- {{date endDate}}
+				</span>
+				{{else}}
+				<span class="endDate">
+					- Present
+				</span>
+				{{/if}}
+			</div>
+
+			<div class="qualification">
+				{{#if studyType}}
+				<span class="studyType">
+					{{studyType}}
+				</span>
+				{{/if}}
+
+				{{#if area}}
+				<span class="area">
+					- {{area}}
+				</span>
+				{{/if}}
+
+				{{#if gpa}}
+				<span class="gpa">
+					GPA: {{gpa}}
+				</span>
+				{{/if}}
+			</div>
+
+			{{#if courses.length }}
+			<ul class="courses">
+				{{#each courses}}
+				<li>{{this}}</li>
+				{{/each}}
+			</ul>
+			{{/if}}
+
+		</div>
+		{{/each}}
+	</section>
+	{{/if}}
+
 	{{#if resume.work.length}}
 	<section class="experience">
 		<h2>Experience</h2>
@@ -186,67 +247,6 @@
 				{{/each}}
 			</ul>
 			{{/if}}
-		</div>
-		{{/each}}
-	</section>
-	{{/if}}
-	
-	{{#if resume.education.length}}
-	<section id="education">
-		<h2>Education</h2>
-		{{#each resume.education}}
-		<div class="item">
-			<header>
-				{{#if institution}}
-					<h3 class="name">{{institution}}</h3>
-				{{/if}}
-			</header>
-
-			<div class="dates">
-				{{#if startDate}}
-				<span class="startDate">
-					{{date startDate}}
-				</span>
-				{{/if}}
-				{{#if endDate}}
-				<span class="endDate">
-					- {{date endDate}}
-				</span>
-				{{else}}
-				<span class="endDate">
-					- Present
-				</span>
-				{{/if}}
-			</div>
-
-			<div class="qualification">
-				{{#if studyType}}
-				<span class="studyType">
-					{{studyType}}
-				</span>
-				{{/if}}
-
-				{{#if area}}
-				<span class="area">
-					- {{area}}
-				</span>
-				{{/if}}
-
-				{{#if gpa}}
-				<span class="gpa">
-					GPA: {{gpa}}
-				</span>
-				{{/if}}
-			</div>
-
-			{{#if courses.length }}
-			<ul class="courses">
-				{{#each courses}}
-				<li>{{this}}</li>
-				{{/each}}
-			</ul>
-			{{/if}}
-
 		</div>
 		{{/each}}
 	</section>
